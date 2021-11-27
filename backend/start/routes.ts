@@ -51,25 +51,13 @@ Route.post('/order', async ({ request, response }) => {
   const orderSchema = schema.create({
     firstName: schema.string(),
     lastName: schema.string(),
-    email: schema.string({}, [
-      rules.email(),
-    ]),
+    email: schema.string({}, [rules.email()]),
     country: schema.string(),
-    postalCode: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{5}$')),
-    ]),
-    phone: schema.string({}, [
-      rules.mobile(),
-    ]),
-    creditCard: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{16}$')),
-    ]),
-    CVV: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{3}$')),
-    ]),
-    expDate: schema.string({}, [
-      rules.regex(new RegExp('^[0-9]{2}\/[0-9]{2}$')),
-    ]),
+    postalCode: schema.string({}, [rules.regex(new RegExp('^[0-9]{5}$'))]),
+    phone: schema.string({}, [rules.mobile()]),
+    creditCard: schema.string({}, [rules.regex(new RegExp('^[0-9]{16}$'))]),
+    CVV: schema.string({}, [rules.regex(new RegExp('^[0-9]{3}$'))]),
+    expDate: schema.string({}, [rules.regex(new RegExp('^[0-9]{2}/[0-9]{2}$'))]),
   })
 
   try {
@@ -77,7 +65,7 @@ Route.post('/order', async ({ request, response }) => {
     response.send({
       message: 'Order successfully placed.',
     })
-  } catch(error) {
+  } catch (error) {
     response.badRequest(error.messages)
   }
 })
