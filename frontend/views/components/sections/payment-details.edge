@@ -1,0 +1,32 @@
+<section id='paymentDetails' class='numbered'>
+  <div class='sectionNumber'>2</div>
+  <h1 class='sectionHeader'>Payment details
+    @!component('components/icons/icon-lock')
+  </h1>
+  <div class='inputFields'>
+    @component('components/inputs/input', {
+      name: 'creditCard',
+      label: 'Credit Card Number',
+      placeholder: '0000-0000-0000-0000',
+      icon: true
+    })
+      @!component('components/icons/icon-visa', { width: '2rem'})
+    @end
+    <div class='row'>
+      @component('components/inputs/input', {
+        name: 'CVV',
+        label: 'Security Code',
+        type: 'password',
+        placeholder: '000',
+        icon: true
+      })
+        <div id='info' data-tooltip='3 digits on the other side of the card'>?</div>
+      @end
+      @!component('components/inputs/input', {
+        name: 'expDate',
+        label: 'Expiration Date',
+        placeholder: 'MM/YY'
+      })
+    </div>
+  </div>
+</section>

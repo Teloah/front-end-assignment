@@ -1,0 +1,11 @@
+<div class='inputField'>
+  <label for={{ name }}>
+    {{ label }}
+  </label>
+  <input name={{ name }} id={{ name }} type={{ type || "text" }} {{ $props.serializeOnly(['placeholder']) }} required />
+  @if(icon)
+  <div class='icon'>
+    {{{ await $slots.main() }}}
+  </div>
+  @end
+</div>

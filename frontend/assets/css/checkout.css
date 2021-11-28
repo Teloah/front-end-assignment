@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+
+@import url('./checkout/variables.css');
+@import url('./checkout/sections.css');
+@import url('./checkout/inputs.css');
+@import url('./checkout/icons.css');
+@import url('./button.css');
+
+body {
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Roboto, sans-serif;
+}
+
+main {
+  background-color: var(--background-color);
+  max-width: 1000px;
+  display: block;
+  height: auto;
+}
+
+form {
+  width: 100%;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 900;
+  & svg {
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    margin: -1px 0.6rem;
+  }
+}

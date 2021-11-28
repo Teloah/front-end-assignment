@@ -1,0 +1,48 @@
+<section id='personalInfo' class='numbered'>
+  <div class='sectionNumber'>1</div>
+  <h1 class='sectionHeader'>Personal information</h1>
+  <div class='inputFields'>
+    <div class='row'>
+      @!component('components/inputs/input', {
+        name: 'firstName',
+        label: 'First Name',
+        placeholder: 'Elon'
+      })
+      @!component('components/inputs/input', {
+        name: 'lastName',
+        label: 'Last Name',
+        placeholder: 'Musk'
+      })
+    </div>
+    @!component('components/inputs/input', {
+      name: 'email',
+      label: 'Email',
+      type: 'email',
+      placeholder: 'elon@spacex.com'
+    })
+    <div class='row'>
+      @!component('components/inputs/select', {
+        name: 'country',
+        label: 'Country',
+        options: [
+          { value: 'US', caption: 'United States' },
+          { value: 'NO', caption: 'Norway' },
+          { value: 'GB', caption: 'Great Britain' },
+          { value: 'CA', caption: 'Canada' },
+          { value: 'LV', caption: 'Latvia' },
+        ]
+      })
+      @!component('components/inputs/input', {
+        name: 'postalCode',
+        label: 'Postal Code',
+        placeholder: '10001'
+      })
+    </div>
+    @!component('components/inputs/input', {
+      name: 'phone',
+      label: 'Phone Number',
+      type: 'tel',
+      placeholder: '(212) 692-93-92'
+    })
+  </div>
+</section>

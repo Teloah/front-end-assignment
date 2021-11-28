@@ -1,0 +1,25 @@
+button {
+  cursor: pointer;
+  flex: 1 1 auto;
+  padding: 1em;
+  color: white;
+  background-color: #6bd400;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  &:hover {
+    background-color: #70de00;
+  }
+  &:active {
+    background-color: #64c601;
+  }
+  & svg {
+    fill: white;
+    height: 0.9rem;
+    width: 0.9rem;
+  }
+}

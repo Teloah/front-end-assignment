@@ -1,0 +1,19 @@
+@layout('layouts/main')
+@set('title', 'Checkout')
+
+@section('entrypoints')
+@super
+@entryPointScripts('checkout')
+@entryPointStyles('checkout')
+@endsection
+
+@section('body')
+<form method='POST' action='/order' autocomplete='on'>
+  <div id='layout'>
+    @!component('components/sections/order-summary', { cart })
+    @!component('components/sections/personal-info')
+    @!component('components/sections/payment-details')
+    @!component('components/sections/submit')
+  </div>
+</form>
+@end

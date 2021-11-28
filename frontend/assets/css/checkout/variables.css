@@ -1,0 +1,10 @@
+:root {
+  --section-number-col-width: 2rem;
+  --section-number-size: 20px;
+  --input-padding: 0.5rem;
+  --shadow: 0 2px 1px #ccc;
+  --tooltip-color: #444;
+  --gap: 1rem;
+  --border-radius: 3px;
+  --background-color: #f2f2f2;
+}

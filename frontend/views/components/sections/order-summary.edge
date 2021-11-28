@@ -1,0 +1,31 @@
+<div id='orderSummaryContainer'>
+  <section id='orderSummary'>
+    <h1>Your Order</h1>
+    <ul id='orderItems'>
+      @each(item in cart.items)
+        @!component('components/sections/summary-entry', {
+          name: item.name,
+          price: formatCurrency(item.price)
+        })
+      @end
+    </ul>
+    <hr />
+    <ul id='subtotal'>
+      @!component('components/sections/summary-entry', {
+        name: 'Total purchases',
+        price: formatCurrency(cart.totals.subTotal)
+      })
+      @!component('components/sections/summary-entry', {
+        name: 'Estimated tax',
+        price: formatCurrency(cart.totals.tax)
+      })
+    </ul>
+    <hr />
+    <ul id='total'>
+      @!component('components/sections/summary-total', {
+        name: 'Total',
+        price: formatCurrency(cart.totals.grandTotal)
+      })
+    </ul>
+  </section>
+</div>

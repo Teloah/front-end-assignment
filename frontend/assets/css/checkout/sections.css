@@ -1,0 +1,122 @@
+section {
+  margin: var(--gap) 0;
+}
+
+.sectionNumber {
+  width: var(--section-number-size);
+  height: var(--section-number-size);
+  color: white;
+  background-color: black;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#layout {
+  display: grid;
+  padding-top: var(--gap);
+  grid-template-areas:
+    'summary'
+    'information'
+    'payment'
+    'submit';
+  @media screen and (min-width: 960px) {
+    grid-template-columns: 1fr auto;
+    column-gap: var(--gap);
+    grid-template-areas:
+      'information summary'
+      'payment     summary'
+      'submit      summary';
+  }
+}
+
+#orderSummaryContainer {
+  grid-area: summary;
+  display: grid;
+  align-items: flex-start;
+  @media screen and (min-width: 960px) {
+    grid-template-rows: 20px auto;
+    row-gap: var(--gap);
+  }
+}
+
+#orderSummary {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  outline: 1px dashed #ddd;
+  outline-offset: -0.5rem;
+  min-width: 13rem;
+  grid-row-start: 2;
+  & li {
+    display: grid;
+    column-gap: 0.3rem;
+    grid-template-columns: 1fr auto;
+    padding: 0.1rem;
+    font-size: 0.8em;
+    list-style: none;
+  }
+  & li::before {
+    content: none;
+  }
+  & li + li {
+    margin-top: 0.5rem;
+  }
+  & li > span:nth-child(1) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  & hr {
+    border: 1px dashed #ddd;
+    margin: var(--gap) 0;
+  }
+  & ul:nth-child(2) {
+    margin-top: var(--gap);
+  }
+  & .total {
+    font-size: 1.5rem;
+  }
+}
+
+#personalInfo {
+  grid-area: information;
+}
+
+#paymentDetails {
+  grid-area: payment;
+}
+
+#submit {
+  grid-area: submit;
+}
+
+.row {
+  display: grid;
+  row-gap: var(--gap);
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--gap);
+  }
+}
+
+.numbered {
+  display: grid;
+  align-items: center;
+  grid-template-columns: var(--section-number-col-width) 1fr;
+}
+
+.inputFields {
+  margin-top: var(--gap);
+  grid-column-end: span 2;
+  display: flex;
+  row-gap: var(--gap);
+  flex-direction: column;
+  @media screen and (min-width: 400px) {
+    grid-column-start: 2;
+  }
+}

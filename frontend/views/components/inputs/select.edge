@@ -1,0 +1,10 @@
+<div class='inputField selectField'>
+  <label for={{ name }}>
+    {{ label }}
+  </label>
+  <select name={{ name }} id={{ name }}>
+    @each(option in options)
+      <option value={{ option.value }}>{{ option.caption }}</option>
+    @end
+  </select>
+</div>
