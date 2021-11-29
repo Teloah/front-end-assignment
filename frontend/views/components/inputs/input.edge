@@ -1,11 +1,17 @@
 <div class='inputField'>
-  <label for={{ name }}>
-    {{ label }}
-  </label>
-  <input name={{ name }} id={{ name }} type={{ type || "text" }} {{ $props.serializeOnly(['placeholder']) }} required />
-  @if(icon)
-  <div class='icon'>
-    {{{ await $slots.main() }}}
+  <div class='inputWrapper'>
+    <label for={{ name }}>
+      {{ label }}
+    </label>
+    <input
+      id={{ name }}
+      {{ $props.serializeExcept(['icon', 'label']) }}
+    />
+    @if(icon)
+    <div class='icon'>
+      {{{ await $slots.main() }}}
+    </div>
+    @end
   </div>
-  @end
+  <div id={{ `${name}-error` }} class='error'></div>
 </div>

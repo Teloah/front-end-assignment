@@ -1,7 +1,13 @@
 .inputField {
   display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.inputWrapper {
   position: relative;
   flex: 1 1 auto;
+  display: flex;
   & label {
     position: absolute;
     left: var(--input-padding);
@@ -35,7 +41,7 @@
   }
 }
 
-.selectField::after {
+.selectField .inputWrapper::after {
   content: ' ';
   width: 0.7rem;
   height: 0.7rem;
@@ -44,4 +50,15 @@
   top: 50%;
   transform: translateY(-50%);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 16 16' style='fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;'%3E%3Cg transform='matrix(1.59668,0,0,1.59668,-9.5469,-4.31906)'%3E%3Cpath d='M10.99,8.11L14.592,4.507L16,5.915L10.992,10.923L10.99,10.921L10.988,10.923L5.979,5.915L7.387,4.507L10.99,8.11Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.error {
+  margin-top: 0.3rem;
+  margin-left: 5px;
+  font-size: 0.7rem;
+  color: #ea2626;
+  display: none;
+  &[data-error] {
+    display: block;
+  }
 }

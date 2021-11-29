@@ -35,14 +35,16 @@
       @!component('components/inputs/input', {
         name: 'postalCode',
         label: 'Postal Code',
-        placeholder: '10001'
+        placeholder: '10001',
+        'data-mask': '00000'
       })
     </div>
     @!component('components/inputs/input', {
       name: 'phone',
       label: 'Phone Number',
       type: 'tel',
-      placeholder: '(212) 692-93-92'
+      placeholder: '(212) 692-93-92',
+      'data-mask': '(000) 000-00-00'
     })
   </div>
 </section>

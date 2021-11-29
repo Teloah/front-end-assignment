@@ -97,6 +97,7 @@ section {
 
 .row {
   display: grid;
+  align-items: flex-start;
   row-gap: var(--gap);
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;

@@ -7,7 +7,8 @@
     @component('components/inputs/input', {
       name: 'creditCard',
       label: 'Credit Card Number',
-      placeholder: '0000-0000-0000-0000',
+      placeholder: '0000 - 0000 - 0000 - 0000',
+      'data-mask': '0000 - 0000 - 0000 - 0000',
       icon: true
     })
       @!component('components/icons/icon-visa', { width: '2rem'})
@@ -18,6 +19,7 @@
         label: 'Security Code',
         type: 'password',
         placeholder: '000',
+        'data-mask': '000',
         icon: true
       })
         <div id='info' data-tooltip='3 digits on the other side of the card'>?</div>
@@ -25,7 +27,8 @@
       @!component('components/inputs/input', {
         name: 'expDate',
         label: 'Expiration Date',
-        placeholder: 'MM/YY'
+        placeholder: 'MM / YY',
+        'data-mask': '00 / 00'
       })
     </div>
   </div>
