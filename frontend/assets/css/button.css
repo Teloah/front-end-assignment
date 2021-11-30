@@ -22,4 +22,12 @@ button {
     height: 0.9rem;
     width: 0.9rem;
   }
+  &:disabled {
+    cursor: auto;
+    background-color: #aaa;
+    color: #ddd;
+    & svg {
+      fill: #ddd;
+    }
+  }
 }

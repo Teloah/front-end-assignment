@@ -5,6 +5,7 @@
 @import url('./checkout/inputs.css');
 @import url('./checkout/icons.css');
 @import url('./button.css');
+@import url('./snackbar.css');
 
 body {
   background-color: var(--background-color);
