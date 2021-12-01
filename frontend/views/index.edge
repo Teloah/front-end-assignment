@@ -1,6 +1,12 @@
 @layout('layouts/main')
 @set('title', 'Home page')
 
+@section('entrypoints')
+@super
+@entryPointScripts('welcome')
+@entryPointStyles('welcome')
+@endsection
+
 @section('body')
   @!component('components/welcome', {
     source: 'resources/views/index.edge'

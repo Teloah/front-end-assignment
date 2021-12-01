@@ -1,0 +1,45 @@
+.welcomePage {
+  & h1 {
+    font-size: clamp(40px, 8vw, 150px);
+    margin-bottom: 4rem;
+  }
+}
+.cards {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  justify-content: space-around;
+  column-gap: 1rem;
+  height: min(30vh, 30vw);
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  position: relative;
+  font-size: clamp(20px, 3vw, 40px);
+  display: flex;
+  align-items: flex-end;
+
+  &::after {
+    content: attr(data-number);
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    line-height: min(30vh, 30vw);
+    font-size: min(30vh, 30vw);
+    font-weight: bold;
+    opacity: 0.2;
+  }
+
+  & a {
+    z-index: 10;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

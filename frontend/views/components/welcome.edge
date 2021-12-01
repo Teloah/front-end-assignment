@@ -1,16 +1,18 @@
-<div>
-  <h1 class="title">
+<div class='welcomePage'>
+  <h1 class='title'>
     Recruitment test
   </h1>
 
-  <div>
-    @!card({
+  <div class='cards'>
+    @!component('components/card', {
       title: 'Bacon',
-      link: '/bacon'
+      link: '/bacon',
+      number: '1'
     })
-    @!card({
+    @!component('components/card', {
       title: 'Checkout',
-      link: '/checkout'
+      link: '/checkout',
+      number: '2'
     })
   </div>
 </div>
